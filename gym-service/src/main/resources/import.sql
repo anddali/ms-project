@@ -1,0 +1,12 @@
+insert into "users" ("username", "password", "email", "phone", "registration_date") values ('andrius', 'pwd123', 'my@email.com', '123456789', '2020-01-01' );
+insert into "workout_plans" ("plan_name","plan_description") values ('Plan One', 'Plan One description');
+insert into "workout_plans" ("plan_name","plan_description") values ('Plan Two', 'Plan Two description');
+insert into "exercises" ("exercise_name","exercise_description", "muscle_group") values ('Push ups', 'To do pushups you need to be in a plank position and lower your body to the ground and then push back up', 'Chest');
+insert into "exercises" ("exercise_name","exercise_description", "muscle_group") values ('Pull ups', 'To do pull ups you need to hang from a bar and pull your body up', 'Back');
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 1, 'Day 1', 1, 12);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 1, 'Day 1', 2, 10);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 1, 'Day 1', 3, 18);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 2, 'Day 2', 1, 12);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 2, 'Day 2', 2, 10);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (1, 2, 'Day 2', 3, 18);
+insert into "plan_details" ("plan_id", "exercise_id", "category", "set", "reps") values (2, 2, 'Test day', 1, 18);

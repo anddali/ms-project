@@ -1,0 +1,72 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: gymservice
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.globally_quoted_identifiers: true
+    defer-datasource-initialization: true
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+  sql:
+    init:
+      mode: always
+
+  h2:
+    console:
+      enabled: true
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: "tracker"
+    description: "Tracker Service"
+    version: 1.0.0
+
+logging:
+  level:
+    com:
+      proj:
+        gymservice: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000

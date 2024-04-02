@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/anddali/ms-project-config.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+encrypt:
+  key: "1234567890123456ABCDEF1234567890"
+server:
+  port: 8888
